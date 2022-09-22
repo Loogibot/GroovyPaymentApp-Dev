@@ -43,10 +43,14 @@ public class CartPaymentEntity {
     /**
      * Foreign key to the cart table.
      */
-    @ForeignKey(
-            entity = CartEntity.class,
-            parentColumns = "cart_id",
-            childColumns = "cart_id")
+
+    // getting ''@ForeignKey' not applicable to field' error
+
+//    @ForeignKey(
+//            entity = CartEntity.class,
+//            parentColumns = "cart_id",
+//            childColumns = "cart_id")
+
     @ColumnInfo(name = "cart_id")
     private long mCartId;
 

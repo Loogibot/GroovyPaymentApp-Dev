@@ -57,7 +57,7 @@ public enum MainDashboardButton {
             R.color.yellow_ripe_lemon,
             R.drawable.dashboard_icon_bg_yellow),
 
-    Placeholder2(
+    UnderConstruction(
             R.string.common_under_construction,
             R.string.placeholder_description,
             R.drawable.ic_money_stack,

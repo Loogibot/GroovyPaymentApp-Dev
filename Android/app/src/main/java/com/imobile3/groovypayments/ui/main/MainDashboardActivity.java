@@ -15,6 +15,7 @@ import com.imobile3.groovypayments.ui.orderhistory.OrderHistoryActivity;
 import com.imobile3.groovypayments.ui.user.UserProfileActivity;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,6 +27,8 @@ public class MainDashboardActivity extends BaseActivity {
 
     private MainDashboardButtonAdapter mMainDashboardButtonAdapter;
     private RecyclerView mLaunchButtonsRecyclerView;
+    private String underConstructMessage, underConstructTitle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -101,7 +104,8 @@ public class MainDashboardActivity extends BaseActivity {
                 startActivity(new Intent(this, PieChartActivity.class));
                 break;
 
-            case Placeholder2:
+            case UnderConstruction:
+                underConstructAlertDialog();
                 throw new RuntimeException("User clicked a Placeholder button");
         }
     }
@@ -115,7 +119,19 @@ public class MainDashboardActivity extends BaseActivity {
         dashboardButtons.add(MainDashboardButton.Management);
         dashboardButtons.add(MainDashboardButton.TimeTracking);
         dashboardButtons.add(MainDashboardButton.DailyReport);
-        dashboardButtons.add(MainDashboardButton.Placeholder2);
+        dashboardButtons.add(MainDashboardButton.UnderConstruction);
         return dashboardButtons;
+    }
+
+    private void underConstructAlertDialog() {
+        underConstructMessage = getString(R.string.under_construction_alert_message);
+        underConstructTitle = getString(R.string.common_under_construction);
+
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setMessage(underConstructMessage)
+                .setTitle(underConstructTitle)
+                .setNeutralButton("ACKNOWLEDGED", (dialog, which)
+                        -> onBackPressed());
+        alert.create().show();
     }
 }

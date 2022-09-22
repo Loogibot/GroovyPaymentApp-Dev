@@ -21,20 +21,30 @@ public class ProductTaxJunctionEntity {
     /**
      * Foreign key to the product table.
      */
-    @ForeignKey(
-            entity = ProductEntity.class,
-            parentColumns = "product_id",
-            childColumns = "product_id")
+
+    // getting ''@ForeignKey' not applicable to field' error
+
+//    @ForeignKey(
+//            entity = ProductEntity.class,
+//            parentColumns = "product_id",
+//            childColumns = "product_id")
+
+
     @ColumnInfo(name = "product_id")
     private long mProductId;
 
     /**
      * Foreign key to the tax table.
      */
-    @ForeignKey(
-            entity = TaxEntity.class,
-            parentColumns = "tax_id",
-            childColumns = "tax_id")
+
+    // getting ''@ForeignKey' not applicable to field' error
+
+//    @ForeignKey(
+//            entity = TaxEntity.class,
+//            parentColumns = "tax_id",
+//            childColumns = "tax_id")
+
+
     @ColumnInfo(name = "tax_id")
     private long mTaxId;
 

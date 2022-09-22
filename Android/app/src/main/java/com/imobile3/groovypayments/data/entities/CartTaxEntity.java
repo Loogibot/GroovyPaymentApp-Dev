@@ -14,7 +14,8 @@ import java.math.BigDecimal;
 @Entity(tableName = "cart_tax",
         indices = {
                 @Index("cart_tax_id"),
-                @Index("cart_id")})
+                @Index("cart_id")}
+)
 @TypeConverters(BigDecimalTypeConverter.class)
 public class CartTaxEntity {
 
@@ -25,10 +26,14 @@ public class CartTaxEntity {
     /**
      * Foreign key to the cart table.
      */
-    @ForeignKey(
-            entity = CartEntity.class,
-            parentColumns = "cart_id",
-            childColumns = "cart_id")
+
+    // getting ''@ForeignKey' not applicable to field' error
+
+//    @ForeignKey(
+//            entity = CartEntity.class,
+//            parentColumns = "cart_id",
+//            childColumns = "cart_id")
+
     @ColumnInfo(name = "cart_id")
     private long mCartId;
 
