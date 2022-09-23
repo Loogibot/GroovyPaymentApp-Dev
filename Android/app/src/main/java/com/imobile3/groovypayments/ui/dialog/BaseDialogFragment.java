@@ -6,11 +6,15 @@ import android.app.DialogFragment;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
+import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.logging.LogHelper;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import java.util.logging.Level;
 
@@ -24,9 +28,8 @@ public class BaseDialogFragment extends DialogFragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        int style = DialogFragment.STYLE_NO_TITLE;
         int theme = android.R.style.Theme_Holo_Light_Dialog;
-        setStyle(style, theme);
+        setStyle(DialogFragment.STYLE_NO_TITLE, theme);
     }
 
     @NonNull
@@ -73,7 +76,7 @@ public class BaseDialogFragment extends DialogFragment {
          * Do not remove without thorough regression testing of dialog memory management.
          */
         if (getView() instanceof ViewGroup) {
-            ((ViewGroup)getView()).removeAllViews();
+            ((ViewGroup) getView()).removeAllViews();
         }
         super.onDestroyView();
     }

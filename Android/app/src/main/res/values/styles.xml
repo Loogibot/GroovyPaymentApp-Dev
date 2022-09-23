@@ -144,6 +144,9 @@
     <style name="TextView.Light.Large" parent="@style/TextView.Light">
         <item name="android:textSize">@dimen/text_size_large</item>
     </style>
+    <style name="TextView.Light.Small" parent="@style/TextView.Light">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
 
     <style name="TextView.Light.Bold" parent="@style/TextView.Light">
         <item name="android:textStyle">bold</item>

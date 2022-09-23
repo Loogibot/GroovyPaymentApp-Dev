@@ -32,6 +32,7 @@ public class ProductEntity {
     @ColumnInfo(name = "cost")
     private long mCost;
 
+
     /**
      * See: GroovyIcon enum.
      */
