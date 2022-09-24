@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/product_list_item_height"
-    android:layout_margin="3dp"
+    android:layout_margin="@dimen/margin_small"
     android:orientation="vertical"
     app:cardCornerRadius="0dp">
 
@@ -25,30 +25,52 @@
             android:layout_gravity="center_vertical"
             android:padding="@dimen/product_list_icon_padding" />
 
+        <View
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/padding_medium"
+            android:layout_marginEnd="@dimen/padding_medium"
+            android:background="@color/gray_be" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:orientation="vertical"
-            android:paddingStart="@dimen/activity_horizontal_margin"
-            android:paddingEnd="@dimen/activity_horizontal_margin"
+            android:paddingStart="@dimen/margin_large"
+            android:paddingEnd="@dimen/margin_small"
             tools:background="#fe6">
 
             <TextView
                 android:id="@+id/label"
-                style="@style/TextView.Label.Bold"
-                android:layout_width="wrap_content"
+                style="@style/TextView.Label.SingleLine.Bold"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="BBQ Bacon Cheeseburger"
-                tools:textColor="@color/red_cinnabar" />
+                tools:text="BBQ Bacon Cheeseburger" />
 
-            <TextView
-                android:id="@+id/description"
-                style="@style/TextView.Light.Small"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="BBQ Bacon Cheeseburger"
-                tools:textColor="@color/gray_be" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:background="#fe6">
+
+                <TextView
+                    android:id="@+id/product_list_cost"
+                    style="@style/TextView.Light.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="$cost |"
+                    tools:textColor="@color/gray_down_pour" />
+
+                <TextView
+                    android:id="@+id/description"
+                    style="@style/TextView.Light.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text=" A Delicious 0.25 lbs. Burger"
+                    tools:textColor="@color/gray_down_pour" />
+            </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>

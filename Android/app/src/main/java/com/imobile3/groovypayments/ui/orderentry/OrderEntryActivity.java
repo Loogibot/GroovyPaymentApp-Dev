@@ -24,15 +24,18 @@ public class OrderEntryActivity extends BaseActivity {
     private OrderEntryViewModel mViewModel;
     private ProductListAdapter mProductListAdapter;
     private RecyclerView mProductListRecyclerView;
+    private String[] mDescriptions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_entry_activity);
         setUpMainNavBar();
+        mDescriptions = getResources().getStringArray(R.array.product_description);
 
         mProductListAdapter = new ProductListAdapter(this,
                 new ArrayList<>(),
+                mDescriptions,
                 new ProductListAdapter.AdapterCallback() {
                     @Override
                     public void onProductClick(Product product) {

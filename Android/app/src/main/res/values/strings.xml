@@ -48,6 +48,26 @@
     <string name="reports_description">View products popularity chart based on daily
         report.</string>
 
+    <!-- Product List Description -->
+    <string-array name="product_description">
+        <item name="chicken_sandwich" >"Chicken, lettuce, tomato and mayo"</item>
+        <item name="aa_batteries" >Medium-quality batteries</item>
+        <item name="folding_chair" >Weighs approximately 12 lbs.</item>
+        <item name="coffee_mug" >Requires at least 48 hours to fulfill custom order</item>
+        <item name="google_shirt" >Depicts the little green android dude</item>
+        <item name="super_nintendo" >The classic SNES console w/ Super Mario World</item>
+        <item name="snickers_bars_25" >A Box of Chocolate candies</item>
+        <item name="wood_tiki_mask" >This mask is definitely not cursed</item>
+        <item name="gel_pen" >Its a pen, with gel ink</item>
+        <item name="masala_tea" >Simply add boiling water</item>
+        <item name="tree_air_freshener" >Great for hanging from a rear-view mirror</item>
+        <item name="tomato_soup_can" >High-quality preservatives give this a 10-year shelf-life</item>
+        <item name="trail_mix" >Also has chocolate candies and raisins</item>
+        <item name="claw_hammer" >Used for hammering stuff, like a disposable cell phone</item>
+        <item name="phillips_screwdriver" >Handy tool with a pointed cross head</item>
+        <item name="coca_cola" >Sweet carbonated drink</item>
+    </string-array>
+
     <!-- User Profile -->
     <string name="user_profile_subtitle_format">Welcome %1$s.</string>
     <string name="user_profile_username">Username:</string>
