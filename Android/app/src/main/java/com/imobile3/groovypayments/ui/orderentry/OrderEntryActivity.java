@@ -39,6 +39,7 @@ public class OrderEntryActivity extends BaseActivity {
                         handleProductClick(product);
                     }
                 });
+
         mProductListRecyclerView = findViewById(R.id.list_products);
         mProductListRecyclerView.setAdapter(mProductListAdapter);
         mProductListRecyclerView.setLayoutManager(new LinearLayoutManager(this));

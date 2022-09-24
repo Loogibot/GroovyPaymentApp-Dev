@@ -8,6 +8,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.imobile3.groovypayments.R;
+import com.imobile3.groovypayments.data.GroovyDatabase;
+import com.imobile3.groovypayments.data.enums.GroovyColor;
 import com.imobile3.groovypayments.data.enums.GroovyIcon;
 import com.imobile3.groovypayments.data.model.Product;
 import com.imobile3.groovypayments.utils.StateListHelper;
@@ -16,6 +18,7 @@ import org.jetbrains.annotations.NotNull;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -53,12 +56,15 @@ public class ProductListAdapter
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Product item = mItems.get(position);
+        GroovyIcon icon = GroovyIcon.fromId(position);
 
         holder.label.setText(item.getName());
         holder.label.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.black_space));
         holder.description.setText(item.getNote());
-        holder.img.findViewById(item.getIconId());
+        holder.icon.setImageResource(icon.productItem(position));
+        holder.icon.setBackground(
+                ContextCompat.getDrawable(mContext, GroovyColor.Orange.colorRes));
     }
 
     @Override
@@ -69,14 +75,14 @@ public class ProductListAdapter
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ViewGroup container;
         TextView label, description;
-        View img;
+        ImageView icon;
 
         ViewHolder(View itemView) {
             super(itemView);
             container = itemView.findViewById(R.id.container);
             label = itemView.findViewById(R.id.label);
             description = itemView.findViewById(R.id.description);
-            img = itemView.findViewById(R.id.icon);
+            icon = itemView.findViewById(R.id.icon);
             container.setOnClickListener(this);
         }
 
