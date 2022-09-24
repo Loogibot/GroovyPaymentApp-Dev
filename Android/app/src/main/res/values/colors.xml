@@ -24,6 +24,7 @@
     <color name="black_darken">#1d1d1d</color>
 
     <!-- Flat UI Color Spectrum -->
+    <color name="yellow_ripe_lemon">#f7ca19</color>
     <color name="blue_chambray">#3a539b</color>
     <color name="blue_dodger_blue">#19b5fe</color>
     <color name="blue_royal_blue">#4183d7</color>
@@ -40,7 +41,6 @@
     <color name="red_old_brick">#96281b</color>
     <color name="red_pomegranate">#f22613</color>
     <color name="red_thunderbird">#d91e18</color>
-    <color name="yellow_ripe_lemon">#f7ca19</color>
     <color name="yellow_saffron">#f4d03f</color>
 
     <color name="text_white_disabled">#bbb</color>
