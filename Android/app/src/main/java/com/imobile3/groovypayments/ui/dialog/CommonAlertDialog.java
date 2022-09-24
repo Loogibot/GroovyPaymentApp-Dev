@@ -62,6 +62,8 @@ public class CommonAlertDialog extends Dialog {
         }
     }
 
+
+
     @Override
     public void setTitle(@Nullable CharSequence title) {
         mTitle = title != null ? title.toString() : "";

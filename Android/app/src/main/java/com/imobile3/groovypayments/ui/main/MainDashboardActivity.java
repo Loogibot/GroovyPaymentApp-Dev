@@ -2,6 +2,8 @@ package com.imobile3.groovypayments.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.logging.LogHelper;
@@ -9,6 +11,8 @@ import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
 import com.imobile3.groovypayments.ui.chart.PieChartActivity;
+import com.imobile3.groovypayments.ui.dialog.BaseDialogFragment;
+import com.imobile3.groovypayments.ui.dialog.CommonAlertDialog;
 import com.imobile3.groovypayments.ui.misc.SecretFunctionsActivity;
 import com.imobile3.groovypayments.ui.orderentry.OrderEntryActivity;
 import com.imobile3.groovypayments.ui.orderhistory.OrderHistoryActivity;
@@ -25,11 +29,6 @@ import java.util.logging.Level;
 
 public class MainDashboardActivity extends BaseActivity {
 
-    private MainDashboardButtonAdapter mMainDashboardButtonAdapter;
-    private RecyclerView mLaunchButtonsRecyclerView;
-    private String underConstructMessage, underConstructTitle;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,7 @@ public class MainDashboardActivity extends BaseActivity {
         setUpMainNavBar();
 
         final List<MainDashboardButton> dashboardButtons = getDashboardButtons();
-        mMainDashboardButtonAdapter = new MainDashboardButtonAdapter(this,
+        MainDashboardButtonAdapter mMainDashboardButtonAdapter = new MainDashboardButtonAdapter(this,
                 dashboardButtons,
                 new MainDashboardButtonAdapter.AdapterCallback() {
                     @Override
@@ -45,7 +44,7 @@ public class MainDashboardActivity extends BaseActivity {
                         handleDashboardButtonClick(button);
                     }
                 });
-        mLaunchButtonsRecyclerView = findViewById(R.id.grid_launch_buttons);
+        RecyclerView mLaunchButtonsRecyclerView = findViewById(R.id.grid_launch_buttons);
         mLaunchButtonsRecyclerView.setAdapter(mMainDashboardButtonAdapter);
         mLaunchButtonsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -105,8 +104,8 @@ public class MainDashboardActivity extends BaseActivity {
                 break;
 
             case UnderConstruction:
-                underConstructAlertDialog();
-                throw new RuntimeException("User clicked a Placeholder button");
+                showAlertDialog(R.string.common_under_construction,R.string.under_construction_alert_message,R.string.common_acknowledged);
+                break;
         }
     }
 
@@ -121,17 +120,5 @@ public class MainDashboardActivity extends BaseActivity {
         dashboardButtons.add(MainDashboardButton.DailyReport);
         dashboardButtons.add(MainDashboardButton.UnderConstruction);
         return dashboardButtons;
-    }
-
-    private void underConstructAlertDialog() {
-        underConstructMessage = getString(R.string.under_construction_alert_message);
-        underConstructTitle = getString(R.string.common_under_construction);
-
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-        alert.setMessage(underConstructMessage)
-                .setTitle(underConstructTitle)
-                .setNeutralButton("ACKNOWLEDGED", (dialog, which)
-                        -> onBackPressed());
-        alert.create().show();
     }
 }
