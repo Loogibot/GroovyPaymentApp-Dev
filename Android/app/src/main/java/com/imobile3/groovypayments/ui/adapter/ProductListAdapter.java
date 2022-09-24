@@ -11,6 +11,7 @@ import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.GroovyDatabase;
 import com.imobile3.groovypayments.data.enums.GroovyColor;
 import com.imobile3.groovypayments.data.enums.GroovyIcon;
+import com.imobile3.groovypayments.data.enums.GroovyProductList;
 import com.imobile3.groovypayments.data.model.Product;
 import com.imobile3.groovypayments.utils.StateListHelper;
 
@@ -56,15 +57,18 @@ public class ProductListAdapter
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Product item = mItems.get(position);
-        GroovyIcon icon = GroovyIcon.fromId(position);
+        int icons = GroovyProductList.productIcon(position);
+        int colors = GroovyProductList.iconColor(position);
 
         holder.label.setText(item.getName());
         holder.label.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.black_space));
+
         holder.description.setText(item.getNote());
-        holder.icon.setImageResource(icon.productItem(position));
+
+        holder.icon.setImageResource(icons);
         holder.icon.setBackground(
-                ContextCompat.getDrawable(mContext, GroovyColor.Orange.colorRes));
+                ContextCompat.getDrawable(mContext, colors));
     }
 
     @Override

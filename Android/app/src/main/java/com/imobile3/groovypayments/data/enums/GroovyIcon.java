@@ -64,28 +64,6 @@ public enum GroovyIcon {
         this.drawableRes = drawableRes;
     }
 
-    public int productItem(int pos) {
-        List<Integer> icons = new ArrayList<>();
-
-        icons.add(GroovyIcon.Sandwich.drawableRes);
-        icons.add(GroovyIcon.BatteryPack.drawableRes);
-        icons.add(GroovyIcon.WoodenChair.drawableRes);
-        icons.add(GroovyIcon.CoffeeMug.drawableRes);
-        icons.add(GroovyIcon.TShirt.drawableRes);
-        icons.add(GroovyIcon.RetroController.drawableRes);
-        icons.add(GroovyIcon.WrappedSweet.drawableRes);
-        icons.add(GroovyIcon.CeremonialMask.drawableRes);
-        icons.add(GroovyIcon.Pencil.drawableRes);
-        icons.add(GroovyIcon.Teapot.drawableRes);
-        icons.add(GroovyIcon.PineTree.drawableRes);
-        icons.add(GroovyIcon.OpenedFoodCan.drawableRes);
-        icons.add(GroovyIcon.Sandwich.drawableRes);
-        icons.add(GroovyIcon.HammerNails.drawableRes);
-        icons.add(GroovyIcon.HammerNails.drawableRes);
-        icons.add(GroovyIcon.CoffeeMug.drawableRes);
-
-        return icons.get(pos);
-    }
 
     @NonNull
     public static GroovyIcon fromId(int id) {
