@@ -1,5 +1,6 @@
 package com.imobile3.groovypayments.ui.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.data.enums.GroovyProductList;
 import com.imobile3.groovypayments.data.model.Product;
+import com.imobile3.groovypayments.rules.ProductRules;
 import com.imobile3.groovypayments.utils.StateListHelper;
 
 import org.jetbrains.annotations.NotNull;
@@ -21,6 +23,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+
+import kotlin.UShortArray;
 
 public class ProductListAdapter
         extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
@@ -28,7 +33,6 @@ public class ProductListAdapter
     private Context mContext;
     private AdapterCallback mCallbacks;
     private List<Product> mItems;
-    private String[] mDescription;
 
     public interface AdapterCallback {
 
@@ -38,12 +42,11 @@ public class ProductListAdapter
     public ProductListAdapter(
             @NonNull Context context,
             @NonNull List<Product> products,
-            @NonNull String[] description,
             @NonNull AdapterCallback callback) {
         mContext = context;
         mCallbacks = callback;
         mItems = products;
-        mDescription = description;
+
     }
 
     @NotNull
@@ -54,26 +57,23 @@ public class ProductListAdapter
         return new ViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Product item = mItems.get(position);
-        int icons = GroovyProductList.productIcon(position);
-        int colors = GroovyProductList.iconColor(position);
-        String descriptions = mDescription[position];
+        ProductRules products = new ProductRules(item);
 
         holder.label.setText(item.getName());
         holder.label.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.black_space));
 
-        holder.description.setText(" | " + descriptions);
+        holder.description.setText("$" + products.getDescription());
         holder.description.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.gray_be));
 
-        holder.cost.setText((int) item.getCost());
-
-        holder.icon.setImageResource(icons);
+        holder.icon.setImageResource(products.getIcon().drawableRes);
         holder.icon.setBackground(
-                ContextCompat.getDrawable(mContext, colors));
+                ContextCompat.getDrawable(mContext, products.getColor().colorRes));
     }
 
     @Override
@@ -92,7 +92,6 @@ public class ProductListAdapter
             label = itemView.findViewById(R.id.label);
             description = itemView.findViewById(R.id.description);
             icon = itemView.findViewById(R.id.icon);
-            cost = itemView.findViewById(R.id.product_list_cost);
             container.setOnClickListener(this);
         }
 

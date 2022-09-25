@@ -342,7 +342,7 @@ public class TestDataRepository {
 
             results.add(ProductBuilder.build(107L,
                     "25-Pack of Snickers Candy Bars",
-                    "",
+                    "A box of chocolate candies",
                     1500L, 350L,
                     GroovyIcon.WrappedSweet, GroovyColor.Orange));
 
@@ -354,7 +354,7 @@ public class TestDataRepository {
 
             results.add(ProductBuilder.build(109L,
                     "Paper-Mate Gel Pen (0.5)",
-                    "",
+                    "Its a pen, with gel ink",
                     299L, 65L,
                     GroovyIcon.Pencil, GroovyColor.Blue));
 
@@ -390,13 +390,13 @@ public class TestDataRepository {
 
             results.add(ProductBuilder.build(115L,
                     "Phillips Screwdriver",
-                    "",
+                    "Handy tool with a pointed cross head",
                     125L, 18L,
                     GroovyIcon.HammerNails, GroovyColor.Blue));
 
             results.add(ProductBuilder.build(116L,
                     "Coca Cola (300 mL)",
-                    "",
+                    "Sweet carbonated drink",
                     125L, 10L,
                     GroovyIcon.CoffeeMug, GroovyColor.Red));
         }

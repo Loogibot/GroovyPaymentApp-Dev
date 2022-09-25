@@ -50,13 +50,13 @@
 
     <!-- Product List Description -->
     <string-array name="product_description">
-        <item name="chicken_sandwich" >"Chicken, lettuce, tomato and mayo"</item>
+        <item name="chicken_sandwich" >Chicken, lettuce, tomato and mayo</item>
         <item name="aa_batteries" >Medium-quality batteries</item>
         <item name="folding_chair" >Weighs approximately 12 lbs.</item>
         <item name="coffee_mug" >Requires at least 48 hours to fulfill custom order</item>
         <item name="google_shirt" >Depicts the little green android dude</item>
         <item name="super_nintendo" >The classic SNES console w/ Super Mario World</item>
-        <item name="snickers_bars_25" >A Box of Chocolate candies</item>
+        <item name="snickers_bars_25" >A box of chocolate candies</item>
         <item name="wood_tiki_mask" >This mask is definitely not cursed</item>
         <item name="gel_pen" >Its a pen, with gel ink</item>
         <item name="masala_tea" >Simply add boiling water</item>

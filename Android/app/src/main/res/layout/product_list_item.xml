@@ -56,19 +56,11 @@
                 tools:background="#fe6">
 
                 <TextView
-                    android:id="@+id/product_list_cost"
-                    style="@style/TextView.Light.Small"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    tools:text="$cost |"
-                    tools:textColor="@color/gray_down_pour" />
-
-                <TextView
                     android:id="@+id/description"
                     style="@style/TextView.Light.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    tools:text=" A Delicious 0.25 lbs. Burger"
+                    tools:text="A Delicious 0.25 lbs. Burger"
                     tools:textColor="@color/gray_down_pour" />
             </LinearLayout>
         </LinearLayout>
