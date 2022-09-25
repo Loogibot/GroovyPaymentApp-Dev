@@ -68,4 +68,11 @@ public final class ProductRules {
         }
         return unitPrice + " | " + note;
     }
+
+    public String getDescription() {
+        BigDecimal unitPrice = new BigDecimal(mProduct.getUnitPrice()).movePointLeft(2);
+        String note = mProduct.getNote();
+
+        return unitPrice + " | " + note;
+    }
 }

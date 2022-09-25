@@ -41,10 +41,10 @@
                 android:layout_marginStart="@dimen/margin_medium"
                 android:layout_marginEnd="@dimen/margin_medium"
                 android:padding="10dp"
-                android:tint="@android:color/white"
                 android:visibility="gone"
                 app:srcCompat="@drawable/ic_back"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                app:tint="@android:color/white" />
         </RelativeLayout>
 
         <LinearLayout
@@ -66,10 +66,10 @@
                 android:background="@drawable/button_bg_outline_selector_inverse"
                 android:padding="@dimen/padding_small"
                 android:scaleType="fitCenter"
-                android:tint="@color/black_space"
                 android:visibility="gone"
                 app:srcCompat="@drawable/ic_lock"
-                tools:visibility="gone" />
+                tools:visibility="gone"
+                app:tint="@color/black_space" />
 
             <ImageView
                 android:id="@+id/btn_nav_menu"
@@ -79,10 +79,10 @@
                 android:background="@drawable/button_bg_outline_selector_inverse"
                 android:padding="@dimen/padding_small"
                 android:scaleType="fitCenter"
-                android:tint="@color/black_space"
                 android:visibility="gone"
                 app:srcCompat="@drawable/ic_overflow_main_nav"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                app:tint="@color/black_space" />
 
             <ImageView
                 android:id="@+id/btn_checkout"
@@ -91,10 +91,10 @@
                 android:layout_marginStart="@dimen/margin_medium"
                 android:layout_marginEnd="@dimen/margin_large"
                 android:padding="2dp"
-                android:tint="@android:color/white"
                 android:visibility="gone"
                 app:srcCompat="@drawable/ic_piggy_bank"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                app:tint="@android:color/white" />
 
             <ProgressBar
                 android:id="@+id/loading_progress_right"
