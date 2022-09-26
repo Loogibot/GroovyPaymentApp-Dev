@@ -1,20 +1,14 @@
 package com.imobile3.groovypayments.ui.orderhistory;
 
-import static org.bouncycastle.asn1.cms.CMSObjectIdentifiers.data;
-
 import android.os.Bundle;
-
 import com.imobile3.groovypayments.R;
-import com.imobile3.groovypayments.data.CartDataSource;
 import com.imobile3.groovypayments.data.model.Cart;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.CartListAdapter;
-
 import androidx.annotation.NonNull;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 
 public class OrderHistoryActivity extends BaseActivity {
@@ -71,7 +65,7 @@ public class OrderHistoryActivity extends BaseActivity {
     }
 
     private void loadCarts() {
-//        getViewModel().getCartClicks(this, data -> mCartListAdapter.setItems(data));
+        getViewModel().getCarts().observe(this, data -> mCartListAdapter.setItems(data));
     }
 
     private void handleCartClick(@NonNull Cart cart) {

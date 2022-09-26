@@ -1,6 +1,7 @@
 package com.imobile3.groovypayments.ui.adapter;
 
 import android.content.Context;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.Objects;
 
 public class CartListAdapter
         extends RecyclerView.Adapter<CartListAdapter.ViewHolder> {
@@ -65,6 +68,15 @@ public class CartListAdapter
 
         holder.description.setText(rules.getOrderHistoryDescription());
         holder.description.setTextColor(
+                StateListHelper.getTextColorSelector(mContext, R.color.gray_down_pour));
+
+        holder.labelTotal.setText(rules.getProductTotal(Locale.getDefault()));
+        holder.labelTotal.setTextColor(
+                StateListHelper.getTextColorSelector(mContext, R.color.black_space));
+
+        holder.labelDate.setText(rules.getFormattedDate(Locale.getDefault()));
+
+        holder.labelDate.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.gray_down_pour));
     }
 
