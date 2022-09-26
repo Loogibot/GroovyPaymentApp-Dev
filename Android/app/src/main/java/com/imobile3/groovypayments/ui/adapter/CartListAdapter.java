@@ -66,6 +66,7 @@ public class CartListAdapter
         holder.icon.setBackground(
                 ContextCompat.getDrawable(mContext, GroovyColor.Orange.colorRes));
 
+        // Add the cart history description, label total and date add via CartRules
         holder.description.setText(rules.getOrderHistoryDescription());
         holder.description.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.gray_down_pour));
@@ -75,7 +76,6 @@ public class CartListAdapter
                 StateListHelper.getTextColorSelector(mContext, R.color.black_space));
 
         holder.labelDate.setText(rules.getFormattedDate(Locale.getDefault()));
-
         holder.labelDate.setTextColor(
                 StateListHelper.getTextColorSelector(mContext, R.color.gray_down_pour));
     }

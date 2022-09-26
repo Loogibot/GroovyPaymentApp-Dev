@@ -1,0 +1,20 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Define the background properties like color etc,
+    this creates gradient style
+    -->
+    <item>
+        <shape>
+            <gradient
+                android:startColor="@color/gray_one"
+                android:centerColor="@color/gray_one"
+                android:endColor="@color/gray_one"
+                android:useLevel="false" />
+            <corners android:radius="10dp" />
+            <stroke
+                android:width="5dp"
+                android:color="@color/gray_one" />
+        </shape>
+    </item>
+
+</layer-list>
