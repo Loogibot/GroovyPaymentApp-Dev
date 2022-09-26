@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.imobile3.groovypayments.R;
-import com.imobile3.groovypayments.data.enums.GroovyProductList;
 import com.imobile3.groovypayments.data.model.Product;
 import com.imobile3.groovypayments.rules.ProductRules;
 import com.imobile3.groovypayments.utils.StateListHelper;
@@ -23,9 +22,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-
-import kotlin.UShortArray;
 
 public class ProductListAdapter
         extends RecyclerView.Adapter<ProductListAdapter.ViewHolder> {
@@ -46,7 +42,6 @@ public class ProductListAdapter
         mContext = context;
         mCallbacks = callback;
         mItems = products;
-
     }
 
     @NotNull
@@ -61,6 +56,7 @@ public class ProductListAdapter
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Product item = mItems.get(position);
+        // using product rules to get icon, color, description and cost per product item
         ProductRules products = new ProductRules(item);
 
         holder.label.setText(item.getName());
@@ -83,7 +79,8 @@ public class ProductListAdapter
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ViewGroup container;
-        TextView label, description, cost;
+        // added description and icon views
+        TextView label, description;
         ImageView icon;
 
         ViewHolder(View itemView) {

@@ -104,6 +104,7 @@ public class MainDashboardActivity extends BaseActivity {
                 break;
 
             case UnderConstruction:
+                // showAlertDialog is using the common dialog alert layout provided
                 showAlertDialog(R.string.common_under_construction,R.string.under_construction_alert_message,R.string.common_acknowledged);
                 break;
         }
