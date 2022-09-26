@@ -4,7 +4,7 @@
 
     <!-- Common -->
     <string name="common_ok">OK</string>
-    <string name="common_cancel">Annuler</string>
+    <string name="common_cancel">Cancelar</string>
     <string name="common_back">Atrás</string>
     <string name="common_change">Cambio</string>
     <string name="common_order_entry">Entrada de Pedido</string>

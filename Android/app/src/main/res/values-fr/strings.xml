@@ -4,17 +4,17 @@
 
     <!-- Common -->
     <string name="common_ok">OK</string>
-    <string name="common_cancel">Cancelar</string>
-    <string name="common_back">Atrás</string>
-    <string name="common_change">Changement</string>
-    <string name="common_order_entry">Saisie de commande</string>
-    <string name="common_management">Administration</string>
-    <string name="common_time_tracking">Suivi du temps</string>
-    <string name="common_under_construction">Sur place</string>
+    <string name="common_cancel">Annuler</string>
+    <string name="common_back">Retour</string>
+    <string name="common_change">Changer</string>
+    <string name="common_order_entry">La Saisie des Commandes</string>
+    <string name="common_management">La Gestion</string>
+    <string name="common_time_tracking">Suivi du Temps</string>
+    <string name="common_under_construction">En construction</string>
     <string name="common_acknowledged">Reconnu</string>
     <string name="common_order_history">Historique des commandes</string>
     <string name="common_secret_functions">Fonctions secrètes</string>
-    <string name="common_user_profile">Profil utilisateur</string>
+    <string name="common_user_profile">Profil de l\'utilisateur</string>
     <string name="common_lorem_ipsum_description">Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Integer commodo, nisi a rutrum dapibus, urna elit cursus mi, ut
         elementum lacus elit nec diam. Nullam laoreet dui id dui facilisis lacinia. Sed convallis
@@ -24,12 +24,12 @@
     <!-- Login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Mot de passe</string>
-    <string name="action_sign_in">Se connecter ou s\'inscrire</string>
-    <string name="skip_login">Ignorer la connexion</string>
-    <string name="action_sign_in_short">Connexion</string>
+    <string name="action_sign_in">Connexion ou Inscription</string>
+    <string name="skip_login">Passer l\'identification</string>
+    <string name="action_sign_in_short">S\'identifier</string>
     <string name="welcome">Bienvenue!</string>
     <string name="invalid_username">Nom d\'utilisateur non valide</string>
-    <string name="invalid_password">Le mot de passe doit comporter >5 caractères</string>
+    <string name="invalid_password">Le mot de passe doit contenir plus de 5 caractères</string>
     <string name="login_failed">Échec de la connexion</string>
 
     <!-- Main Dashboard -->

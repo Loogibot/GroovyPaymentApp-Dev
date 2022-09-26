@@ -64,6 +64,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/gray_slate"
+                    android:textStyle="bold|italic"
                     tools:text="01/26/2020 @ 5:47 PM" />
             </LinearLayout>
 

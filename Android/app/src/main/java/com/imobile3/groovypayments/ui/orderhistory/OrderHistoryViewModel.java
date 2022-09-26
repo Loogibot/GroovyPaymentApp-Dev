@@ -26,9 +26,12 @@ public class OrderHistoryViewModel extends ViewModel {
         mRepository = repository;
     }
 
+    /*
+     similar to product list with order entry view model, implement this method to get the history
+     of carts from database when called in the activity order history activity
+     */
+
     public LiveData<List<Cart>> getCarts() {
-        // Caller should observe this object for changes. When the data has finished
-        // async loading, the observer can react accordingly.
         final MutableLiveData<List<Cart>> observable =
                 new MutableLiveData<>(new ArrayList<>());
 
@@ -42,7 +45,6 @@ public class OrderHistoryViewModel extends ViewModel {
                 observable.postValue(new ArrayList<>());
             }
         });
-
         return observable;
     }
 
