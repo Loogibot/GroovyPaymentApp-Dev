@@ -85,6 +85,7 @@ public class OrderEntryActivity extends BaseActivity {
         return mViewModel;
     }
 
+    // get products
     private void loadProducts() {
         getViewModel().getProducts()
                 .observe(this, data -> mProductListAdapter.setItems(data));
